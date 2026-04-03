@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>领取 CPA 奖励</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 60px 20px; 
+            background: linear-gradient(#1a1a2e, #16213e); 
+            color: white; 
+            margin: 0;
+        }
+        h1 { font-size: 32px; margin-bottom: 10px; }
+        p { font-size: 18px; margin-bottom: 40px; color: #ddd; }
+        button { 
+            padding: 18px 50px; 
+            font-size: 24px; 
+            background: #00ff88; 
+            color: #000; 
+            border: none; 
+            border-radius: 12px; 
+            font-weight: bold; 
+            cursor: pointer;
+        }
+        button:active { transform: scale(0.95); }
+    </style>
+</head>
+<body>
+    <h1>✅ 任务完成！</h1>
+    <p>点击下方按钮领取你的游戏奖励</p>
+    
+    <button onclick="claimReward()">领取 500 金币</button>
+
+    <script>
+    function claimReward() {
+        window.location.href = "cpaunlock://reward?amount=500";
+        
+        // 如果部分浏览器阻止跳转，显示提示
+        setTimeout(() => {
+            alert("如果没有自动跳转回游戏，请手动返回游戏查看奖励！");
+        }, 1000);
+    }
+    </script>
+</body>
+</html>
